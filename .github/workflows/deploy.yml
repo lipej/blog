@@ -17,5 +17,5 @@ jobs:
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: my-project 
+          project: free-newt-87 
           entrypoint: main.ts
