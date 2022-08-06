@@ -82,15 +82,15 @@ Outra coisa boa é que o builder poderia conter valores padrões para o caso de 
 Duas considerações:
 
 - Você reparou que eu defini a minha classe Person com todos os campos readonly, isso significa que
-  sempre que criarmos um usuário novo, ele é imutável, e isso é ótimo para consistência!
+  sempre que criarmos uma pessoa nova, ela é imutável, e isso é ótimo para consistência na aplicação!
 
 - Você percebeu como é muito mais interativo a criação utilizando um builder?
 
-E você deve estar pensando, para que o builder tem um método `from` que recebe um usuário... Bom, isso eu fiz para facilitar algumas coisas.
+E você deve estar pensando, para que o builder tem um método `from` que recebe uma pessoa... Bom, isso eu fiz para facilitar algumas coisas.
 
-Imagine você que tem um useCase que serve para alterar algum campo, vamos imaginar a atualização do nome, bom na requisição você deve receber o id desse usuário e o nome atualizado, e você vai fazer primeiro uma busca no banco e verificar se esse retorno é válido certo?
+Imagine você que tem um useCase que serve para alterar algum campo, vamos imaginar a atualização do nome, bom na requisição você deve receber o id dessa pessoa e o nome atualizado, e você vai fazer primeiro uma busca no banco e verificar se esse retorno é válido certo?
 
-Pois bem, com um retorno válido, você recebeu do banco a pessoa referente a esse id, e tudo que você precisa fazer é alterar o nome dela, veja como é simples:
+Pois bem, com um retorno válido, você recebeu do banco a pessoa referente a esse id, e tudo que você precisa fazer é alterar o nome dela (e novamente, pode ser que não seria apenas o nome, poderia ser que essa classe é gigate e você precisasse verificar a alteração de vários campos), veja como é simples:
 
 ```typescript
 export class UpdatePersonUseCase {
